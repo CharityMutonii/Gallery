@@ -25,7 +25,7 @@ class Category(models.Model):
         '''
         self.update(location_name = cat1)
 
-class location(models.Model):
+class Location(models.Model):
         name = models.CharField(max_length=60)
         def __str__(self):
             '''
@@ -47,3 +47,29 @@ class location(models.Model):
                 method to update location
             '''
             self.update(location_name = loc1)
+
+class Photo(models.Model):
+    
+    name = models.CharField(max_length=244)
+    description = models.TextField()
+    location = models.ForeignKey(Location)
+    categories = models.ForeignKey(Category)
+    post_date = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to="images/")
+
+    def __str__(self):
+        '''
+        method to display image
+        '''
+        return self.name
+    def save_image(self):
+        '''
+        method to save image
+        '''
+        return self.save()
+    def delete_image(self):
+        '''
+        method to delete image
+        '''
+        return self.delete()
+   
