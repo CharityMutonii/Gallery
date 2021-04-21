@@ -72,4 +72,11 @@ class Photo(models.Model):
         method to delete image
         '''
         return self.delete()
-   
+
+    @classmethod
+    def all_photos(cls):
+        """
+        A method to return all photos
+        """
+        return cls.objects.all()
+    
