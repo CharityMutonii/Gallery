@@ -85,3 +85,17 @@ class Photo(models.Model):
         A method to get a photo based on its id
         """
         return cls.objects.get(id = id)
+
+    @classmethod
+    def search_photo_by_category(cls, search_term):
+        """
+        A method to return all photos based on catergory
+        """
+        return cls.objects.filter(categories__name__icontains = search_term)
+
+    @classmethod
+    def filter_by_location(cls, location):
+        """
+        A method to filter all photos based on the location
+        """
+        return cls.objects.filter(location__location_name__icontains = location)    
