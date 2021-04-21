@@ -79,4 +79,9 @@ class Photo(models.Model):
         A method to return all photos
         """
         return cls.objects.all()
-    
+    @classmethod
+    def get_photo_by_id(cls, id):
+        """
+        A method to get a photo based on its id
+        """
+        return cls.objects.get(id = id)
