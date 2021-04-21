@@ -25,3 +25,25 @@ class Category(models.Model):
         '''
         self.update(location_name = cat1)
 
+class location(models.Model):
+        name = models.CharField(max_length=60)
+        def __str__(self):
+            '''
+            method to update location
+            '''
+            return self.name
+        def save_location(self):
+            '''
+            method to save location
+            '''
+            return self.save()
+        def delete_location(self):
+            '''
+            method to delete location
+            '''
+            return self.delete()
+        def update_location(self, loc1):
+            '''
+                method to update location
+            '''
+            self.update(location_name = loc1)
