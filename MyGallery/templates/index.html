@@ -24,7 +24,7 @@
                         <p>uploaded {{photo.post_date | timesince}} ago</p>
                     </div>
                     <div class="modal-footer">
-                        <input class="form-control input-lg" type="text" value="{{photo.image.url}}" id="{{photo.id}}.url">
+                        <input class="form-control input-lg" type="text" value="{{photo.image.url}}" id="input">
                         <button class="btn btn-success btn-sm" onclick="myFunction('{{photo.id}}.url')">Copy</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
