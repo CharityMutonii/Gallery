@@ -2,37 +2,38 @@
 {% block content %}
 {{block.super}}
 <div class="container">
+    {%if photos%}
     <div class="row">
+        <h1 class="text-center">ALL IMAGES</h1>
         {% for photo in photos %}
-        <div class="col-md-4 pt" data-toggle="modal" data-target="#{{image.id}}">
-            <div class="card " style="width:16rem;">
-                <img src="{{photo.image.url}}" alt="{{photo.name}}" class="card-img-top" width="300" height='250'>
+        <div class="col-md-4 pt" data-toggle="modal" data-target="#{{photo.id}}">
+            <div class="card " style="width:18rem;">
+                <img src="{{photo.image.url}}" alt="{{photo.name}}" class="card-img-top" width="350" height='250'>
             </div>
         </div>
-
-        <!-- Modal -->
-        <div class="modal fade" id="{{photo.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+        <!-- .modal-profile -->
+        <div class="modal fade bd-example-modal-sm" id="{{photo.id}}" tabindex="1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="background-color:transparent;">
+            <div class="modal-dialog bd-example-modal-sm" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title" id="exampleModalLabel">{{photo.name}}</h1>
-                    </div>
                     <div class="modal-body">
-                        <img src="{{photo.image.url}}" class="image-responsive w-100 " alt="image">
+                        <h2 class="modal-title" id="title">{{photo.name}}</h2>
+                        <img src="{{photo.image.url}}" class="image-responsive w-100 " alt="image" width="350" height='250'>
                         <p class="">{{photo.description}}</p>
-                        <p class="description-body"><span class="badge">
-                            <i class="fas fa-map-marker-alt"></i> {{photo.location.name}}
-                        </span></p>
-                        <p>Category : {{photo.category.name}}</p>
-                        <p>posted {{photo.post_date | timesince}} ago</p>
+                        <p class="description-body"><span class="badge"><i class="fas fa-map-marker-alt"></i> {{photo.location.name}}</span></p>
+                        <p>Categor:{{photo.category.name}}</p>
+                        <p>uploaded {{photo.post_date | timesince}} ago</p>
                     </div>
                     <div class="modal-footer">
                         <input class="form-control input-lg" type="text" value="{{photo.image.url}}" id="{{photo.id}}.url">
-                        <button class="btn btn-success btn-sm" onclick="copyLink('{{photo.id}}.url')">Copy</button>
+                        <button class="btn btn-success btn-sm" onclick="myFunction('{{photo.id}}.url')">Copy</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- //.modal-profile -->
+        {% endfor%}
     </div>
-
+    {% endif %}
 </div>
+{% endblock %}

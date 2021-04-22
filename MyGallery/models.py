@@ -61,7 +61,7 @@ class Photo(models.Model):
         '''
         method to display image
         '''
-        return self.name
+        return self.name  
     def save_image(self):
         '''
         method to save image
@@ -91,7 +91,7 @@ class Photo(models.Model):
         """
         A method to return all photos based on catergory
         """
-        return cls.objects.filter(categories__name__icontains = search_term)
+        return cls.objects.filter(category__name__icontains = search_term)
 
     @classmethod
     def filter_by_location(cls, location):

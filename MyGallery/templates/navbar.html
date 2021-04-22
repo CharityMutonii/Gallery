@@ -13,22 +13,19 @@
             <p class="navbar-brand" >Charity's Gallery</p>
           </div>
           <ul class="nav navbar-nav">
-            <li  ><a href="{% url 'index' %}">Home</a></li>
+            <li  ><a href="#">Home</a></li>
           </ul>
           <div class="nav-item">
               <div class="dropdown">
                 <a class="navbar-brand">Location<i class="fa fa-caret-down"></i></a>
                 <div class="dropdown-content">
-                <a href="{% url 'location' location='Musanze'%}">Musanze</a>
-                <a href="{% url 'location' location='kigali'%}">Kigali</a>
-                <a href="{% url 'location' location='kibuye'%}">kibuye</a>
               </div>
             </div>
             </div>
           
           <div class="col-sm-4 col-md-4 navbar-right">
 
-        <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+        <form class="navbar-form" role="search" action="search">
 
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Search Image Category" name="image">
