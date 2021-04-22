@@ -13,6 +13,7 @@
     {% endif %}
     {% block styles %}
     {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     {% endblock %}
 </head>
 
@@ -20,6 +21,7 @@
     {% include "navbar.html" %}
     {% block content %}{%endblock%}
     {% block scripts %}
+    <script src="{% static 'js/copy.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {% bootstrap_javascript %}
     {%endblock%}
