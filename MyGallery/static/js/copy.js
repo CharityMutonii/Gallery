@@ -1,7 +1,11 @@
-function myFunction() {
-    var copyText = document.getElementById("input");
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); 
+copyLink =(element) => {
+    document.getElementById(element).select();
     document.execCommand("copy");
-    alert("Copied the text: " + copyText.value);
-  }
+
+    // var tooltip = document.getElementById("myTooltip");
+    // tooltip.innerHTML = "Copied: " + copyText.value;
+  } 
+//   function outFunc() {
+//     var tooltip = document.getElementById("myTooltip");
+//     tooltip.innerHTML = "Copy to clipboard";
+//   }

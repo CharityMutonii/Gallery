@@ -1,4 +1,10 @@
-.tooltip {
+
+.pt{
+margin-top: 5%;
+}
+
+
+/* .tooltip {
     position: relative;
     display: inline-block;
   }
@@ -34,4 +40,4 @@
   .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
-  }
+  } */
