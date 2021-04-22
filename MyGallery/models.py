@@ -53,7 +53,7 @@ class Photo(models.Model):
     name = models.CharField(max_length=244)
     description = models.TextField()
     location = models.ForeignKey(Location)
-    categories = models.ForeignKey(Category)
+    category = models.ForeignKey(Category)
     post_date = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to="images/")
 
