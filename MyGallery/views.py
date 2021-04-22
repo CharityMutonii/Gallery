@@ -5,3 +5,5 @@ from .models import Photo, Location,Category
 def index(request):
     photos = Photo.all_photos()
     return render(request, "index.html", {'photos':photos})
+
+

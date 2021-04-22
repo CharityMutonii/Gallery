@@ -79,6 +79,7 @@ class Photo(models.Model):
         A method to return all photos
         """
         return cls.objects.all()
+
     @classmethod
     def get_photo_by_id(cls, id):
         """
@@ -91,8 +92,9 @@ class Photo(models.Model):
         """
         A method to return all photos based on catergory
         """
-        return cls.objects.filter(category__name__icontains = search_term)
-
+        pho = cls.objects.filter(category__name__icontains = search_term)
+        return pho
+        
     @classmethod
     def filter_by_location(cls, location):
         """
