@@ -1,7 +1,7 @@
 {%extends 'base.html'%}
 {% block content %}
 <div class="container">
-    {% if photos%}
+    {% if photo%}
     <h2>Found {{ photos|length }} of {{message}}</h2>
     {% else %}
     <h2> Found 0 photoss for {{message}}</h2>
@@ -9,7 +9,7 @@
     <hr>
 </div>
 <div class="container">
-    {%if photos%}
+    {%if photo%}
     <div class="row">
         {% for photo in photos %}
         <div class="col-md-4 pt" data-toggle="modal" data-target="#{{photo.id}}">
