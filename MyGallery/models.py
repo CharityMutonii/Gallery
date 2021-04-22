@@ -100,4 +100,4 @@ class Photo(models.Model):
         """
         A method to filter all photos based on the location
         """
-        return cls.objects.filter(location__location_name__icontains = location)    
+        return cls.objects.filter(location__name__icontains = location)    
