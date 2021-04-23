@@ -19,3 +19,11 @@ def search_results(request):
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})      
 
+def display_location(request,location):
+    
+        locat=Photo.filter_by_location(location)
+        print(locat)
+        location=Location.objects.all()
+       
+    
+        return render(request,'location.html',{'location':location, 'photo':locat}) 
