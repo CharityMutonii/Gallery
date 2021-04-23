@@ -1,6 +1,6 @@
 {%extends 'base.html'%}
 {% block content %}
-{{block.super}}
+
 <div class="container">
     {%if photos%}
     <div class="row">
@@ -22,7 +22,7 @@
                         <p>Categor:{{photo.category.name}}</p>
                         <p>uploaded {{photo.post_date | timesince}} ago</p>
                     </div>
-                   
+
                     <div class="modal-footer">
                         <input class="form-control input-lg" type="text"
                              value="{{photo.image.url}}" id="{{photo.id}}.url">
@@ -30,8 +30,6 @@
                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                          
                      </div>
-                       
-                    
                 </div>
             </div>
         </div>

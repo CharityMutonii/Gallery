@@ -1,14 +1,14 @@
 {%extends 'base.html'%}
 {% block content %}
 <div class="container">
-    <div class="row">
-        {% if photos %}
-        <h2>Found {{ photos|length }} of {{message}}</h2>
-        {% else %}
-        <h2> Found 0 photos for {{message}}</h2>
-        {% endif %}
-        <hr>
-    </div>
+    {% if photos%}
+    <h2>Found {{ photos|length }} of {{message}}</h2>
+    {% else %}
+    <h2> Found 0 photos for {{message}}</h2>
+    {% endif %}
+    <hr>
+</div>
+<div class="container"></div>
     {%if photos%}
     <div class="row">
         {% for photo in photos %}
@@ -17,6 +17,7 @@
                 <img src="{{photo.image.url}}" alt="{{photo.name}}" class="card-img-top" width="350" height='250'>
             </div>
         </div>
+        <!-- .modal-profile -->
         <div class="modal fade bd-example-modal-sm" id="{{photo.id}}" tabindex="1" role="dialog"
             aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="background-color:transparent;">
             <div class="modal-dialog bd-example-modal-sm" role="document">
@@ -31,15 +32,20 @@
                         <p>Categor:{{photo.category.name}}</p>
                         <p>uploaded {{photo.post_date | timesince}} ago</p>
                     </div>
+
                     <div class="modal-footer">
                         <input class="form-control input-lg" type="text" value="{{photo.image.url}}"
                             id="{{photo.id}}.url">
                         <button class="btn btn-success btn-sm" onclick="copyLink('{{photo.id}}.url')">Copy</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
                     </div>
+
+
                 </div>
             </div>
         </div>
+        <!-- //.modal-profile -->
         {% endfor%}
     </div>
     {% endif %}

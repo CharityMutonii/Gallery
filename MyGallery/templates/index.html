@@ -4,7 +4,7 @@
 <div class="container">
     {%if photos%}
     <div class="row">
-        <h1 class="text-center">ALL IMAGES</h1>
+        <h1 class="text-center" style="font-family: 'Baloo Bhai', cursive; color:black; font-size: 40px">My GALLERY</h1>
         {% for photo in photos %}
         <div class="col-md-4 pt" data-toggle="modal" data-target="#{{photo.id}}">
             <div class="card " style="width:18rem;">
@@ -41,4 +41,5 @@
     </div>
     {% endif %}
 </div>
+
 {% endblock %}
