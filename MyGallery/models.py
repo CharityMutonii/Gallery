@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Category(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
     
     def __str__(self):
@@ -26,30 +27,23 @@ class Category(models.Model):
         self.update(location_name = cat1)
 
 class Location(models.Model):
-        name = models.CharField(max_length=60)
-        def __str__(self):
-            '''
-            method to update location
-            '''
-            return self.name
-        def save_location(self):
-            '''
-            method to save location
-            '''
-            return self.save()
-        def delete_location(self):
-            '''
-            method to delete location
-            '''
-            return self.delete()
-        def update_location(self, loc1):
-            '''
-                method to update location
-            '''
-            self.update(location_name = loc1)
+
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=60)
+    def __str__(self):
+        return self.name
+    def save_location(self):
+
+        return self.save()
+    def delete_location(self):
+        return self.delete()
+    def update_location(self, loc1):
+
+        self.update(location_name = loc1)
 
 class Photo(models.Model):
     
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=244)
     description = models.TextField()
     location = models.ForeignKey('Location',on_delete=models.CASCADE)
