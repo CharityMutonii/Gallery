@@ -54,7 +54,7 @@ You can reach out to me through:
 * charitytoni0@gmail.com
 
 ## Live Site link
-You can view the live application by following this 
+You can view the live application by following this https://chagallery.herokuapp.com/
 
 ## License
 #### [*MIT License*](LICENSE)
